@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tree health scanner | QUAD K</title>
+  <link rel="icon" type="image/jpeg" href="img/QKlogo.jpg" sizes="256x256 128x128 32x32">
+  <link rel="stylesheet" href="quad-k.css">
+  <link rel="stylesheet" href="tree-scan.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="QUAD K.HTML">QUAD K</a>
+    <nav aria-label="Main navigation"><a href="QUAD K.HTML#shop">Shop</a><a href="tree-scan.html">Tree scanner</a><a href="join-us.html">Join us</a></nav>
+    <a class="cart-button back-link" href="QUAD K.HTML">Back to shop</a>
+  </header>
+  <main>
+    <section class="scan-hero"><p class="eyebrow">QUAD K field tool</p><h1>Scan your palm tree.</h1><p>Capture a clear image, record what you can see, and create a screening report for a grower or agricultural expert.</p></section>
+    <section class="section scan-layout">
+      <div class="camera-panel">
+        <div class="camera-frame"><video id="camera" autoplay playsinline></video><canvas id="snapshot"></canvas><p id="camera-placeholder">Camera preview will appear here</p></div>
+        <div class="camera-actions"><button class="primary-button" id="start-camera" type="button">Start camera</button><button class="secondary-button dark-button" id="capture" type="button" disabled>Capture photo</button></div>
+        <label class="file-label" for="tree-image">Or upload a photo<input id="tree-image" type="file" accept="image/*"></label>
+        <p class="privacy-note">Your image stays in this browser during screening. It is not automatically sent to QUAD K.</p>
+      </div>
+      <form class="symptom-form" id="screening-form">
+        <p class="eyebrow">Field notes</p><h2>What do you see?</h2>
+        <p class="form-intro">Select every sign you notice. These questions screen for risk; they cannot confirm a virus or insect species.</p>
+        <fieldset><legend>Visible signs</legend><label><input type="checkbox" name="sign" value="insects"> Insects, webbing, or holes</label><label><input type="checkbox" name="sign" value="spots"> Yellow, brown, or black spots</label><label><input type="checkbox" name="sign" value="wilting"> Wilting or folded leaves</label><label><input type="checkbox" name="sign" value="trunk"> Trunk damage, ooze, or unusual growth</label><label><input type="checkbox" name="sign" value="stunted"> New growth looks stunted or distorted</label></fieldset>
+        <label>Tree location<input id="location" name="location" placeholder="Town or farm location" required></label>
+        <label>Additional notes<textarea id="notes" name="notes" placeholder="When did you first notice the change?"></textarea></label>
+        <button class="primary-button" type="submit">Create screening report</button>
+        <div class="report" id="report" role="status"></div>
+      </form>
+    </section>
+  </main>
+  <footer><strong>QUAD K</strong><div class="payment-note">For urgent or spreading damage, do not wait for an online result. Contact your local agricultural extension officer or plant-health specialist.</div></footer>
+  <script src="tree-scan.js"></script>
+</body>
+</html>

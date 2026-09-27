@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The story of QUAD K and ways to grow with our palm oil business.">
+  <title>Our story | Join QUAD K</title>
+  <link rel="icon" type="image/jpeg" href="img/QKlogo.jpg" sizes="256x256 128x128 32x32">
+  <link rel="stylesheet" href="quad-k.css">
+  <link rel="stylesheet" href="join-us.css">
+</head>
+<body>
+      <div class="value-list">
+        <article><span>01</span><h3>Respect the source</h3><p>Healthy trees and supported growers are the beginning of every good order.</p></article>
+        <article><span>02</span><h3>Make quality practical</h3><p>Fresh, carefully filtered palm oil should work for a family kitchen or a growing shelf.</p></article>
+        <article><span>03</span><h3>Grow together</h3><p>Farmers, resellers, distributors, and customers all have a place in the QUAD K story.</p></article>
+      </div>
+    </section>
+
+    <section class="story-section timeline" aria-labelledby="journey-title">
+      <div class="section-kicker"><span>02</span><p class="eyebrow">Our direction</p></div>
+      <div class="story-copy"><h2 id="journey-title">A better path from grove to home.</h2><div class="milestones"><p><strong>Today</strong><span>We supply homes, restaurants, and resellers with carefully packed palm oil.</span></p><p><strong>Next</strong><span>We are building stronger connections between growers, tree health, and reliable markets.</span></p><p><strong>Always</strong><span>We keep learning, listening, and making the next order better than the last.</span></p></div></div>
+    </section>
+
+    <section class="application story-application" id="application" aria-labelledby="application-title">
+      <div class="application-intro"><p class="eyebrow">Your place in the story</p><h2 id="application-title">Let’s grow something lasting.</h2><p>Join us as a reseller, distributor, or palm farmer. Tell us where you are and what you want to build with QUAD K.</p></div>
+      <form class="form" id="join-form">
+        <label>Full name<input name="name" required></label>
+        <label>Phone number<input name="phone" type="tel" required></label>
+        <label>Email address<input name="email" type="email" required></label>
+        <label>Business path<select name="path" required><option value="">Choose one</option><option>Reseller</option><option>Distributor</option><option>Palm farmer</option></select></label>
+        <label class="full">Tell us about your interest<textarea name="message" required></textarea></label>
+        <button class="primary-button" type="submit">Send your story</button>
+        <p class="form-message" role="status">Thank you. WhatsApp is opening so the QUAD K team can continue the conversation.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer><strong>QUAD K</strong><div class="payment-note">A Nigerian palm oil business, grown with care. <a href="QUAD K.HTML">Shop the grove</a>.</div></footer>
+  <script>
+    document.querySelector('#join-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.target);
+      const message = `Hello QUAD K, I want to join the business. Name: ${data.get('name')}. Phone: ${data.get('phone')}. Email: ${data.get('email')}. Path: ${data.get('path')}. Interest: ${data.get('message')}`;
+      window.open(`https://wa.me/2348136446489?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+      event.target.querySelector('.form-message').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
