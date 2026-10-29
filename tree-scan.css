@@ -1,26 +1,187 @@
-.scan-hero { background: linear-gradient(110deg, rgba(18,60,43,.98), rgba(18,60,43,.56)), url('https://commons.wikimedia.org/wiki/Special:FilePath/Oil%20Palm%20Plantation%2C%20Awo-omamma.jpg?width=1600') center/cover; color: white; padding: 92px max(24px, 8vw); }
-.scan-hero p:not(.eyebrow) { color: #e2ebde; font-size: 18px; max-width: 610px; }
-.scan-layout { display: grid; gap: 28px; grid-template-columns: 1.1fr .9fr; }
-.camera-panel, .symptom-form { background: var(--white); border: 1px solid var(--line); padding: 24px; }
-.camera-frame { background: #17261d; min-height: 370px; overflow: hidden; position: relative; }
-.camera-frame video, .camera-frame canvas { display: block; height: 100%; min-height: 370px; object-fit: cover; width: 100%; }
+/* Tree scanner page — Market Stall extras on top of quad-k.css */
+
+.scan-hero h1 { font-size: 72px; }
+
+.scan-layout {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr;
+}
+
+.panel {
+  background: var(--white);
+  border: 4px solid var(--forest);
+  box-shadow: 8px 8px 0 var(--forest);
+  padding: 24px;
+}
+
+.camera-frame {
+  background: var(--forest);
+  border: 4px solid var(--forest);
+  min-height: 340px;
+  overflow: hidden;
+  position: relative;
+}
+
+.camera-frame video, .camera-frame canvas {
+  display: block;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  width: 100%;
+}
+
 .camera-frame canvas { display: none; }
-.camera-frame p { color: #aab8a9; left: 0; position: absolute; right: 0; text-align: center; top: 45%; }
-.camera-actions { display: flex; gap: 10px; margin: 16px 0; }
-.dark-button { border-color: var(--forest); color: var(--forest); margin: 0; }
-.dark-button:disabled { cursor: not-allowed; opacity: .45; }
-.file-label { display: grid; font-weight: 700; gap: 8px; }
-.file-label input { border: 1px solid var(--line); padding: 12px; }
-.privacy-note, .form-intro { color: var(--muted); font-size: 13px; }
-.symptom-form h2 { font-size: 36px; }
-.symptom-form > label { display: grid; font-weight: 700; gap: 7px; margin-top: 16px; }
-.symptom-form input[type='text'], .symptom-form textarea { background: var(--cream); border: 1px solid var(--line); padding: 12px; width: 100%; }
+
+.camera-frame p {
+  color: var(--lime);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 900;
+  left: 0;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0 20px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 45%;
+}
+
+.scan-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 18px 0; }
+
+.file-label {
+  display: grid;
+  font-size: 12px;
+  font-weight: 900;
+  gap: 8px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.file-label input {
+  background: var(--lime);
+  border: 3px solid var(--forest);
+  border-radius: 0;
+  color: var(--forest);
+  font-family: var(--font-fill);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px;
+  width: 100%;
+}
+
+.privacy-note, .note-line {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.45;
+  margin: 16px 0 0;
+  opacity: .8;
+}
+
+.note-line { margin: 0 0 18px; }
+
+.symptom-form h2 { font-size: 44px; }
+
+.symptom-form > label {
+  display: grid;
+  font-size: 12px;
+  font-weight: 900;
+  gap: 6px;
+  letter-spacing: .06em;
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+.symptom-form input[type='text'], .symptom-form textarea {
+  background: var(--lime);
+  border: 3px solid var(--forest);
+  border-radius: 0;
+  color: var(--forest);
+  font-family: var(--font-fill);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px;
+  transition: background .2s, box-shadow .2s;
+  width: 100%;
+}
+
+.symptom-form #location {
+  background: var(--lime);
+  border: 3px solid var(--forest);
+  border-radius: 0;
+  color: var(--forest);
+  font-family: var(--font-fill);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px;
+  transition: background .2s, box-shadow .2s;
+  width: 100%;
+}
+
+.symptom-form input:hover, .symptom-form textarea:hover { background: var(--lime-soft); }
+
+.symptom-form input:focus-visible, .symptom-form textarea:focus-visible {
+  background: var(--white);
+  box-shadow: 0 0 0 3px var(--orange);
+  outline: none;
+}
+
 .symptom-form textarea { min-height: 90px; resize: vertical; }
-fieldset { border: 1px solid var(--line); display: grid; gap: 12px; margin: 22px 0; padding: 15px; }
-legend { font-weight: 700; padding: 0 6px; }
-fieldset label { color: var(--ink); }
-fieldset input { accent-color: var(--leaf); margin-right: 8px; }
+
+fieldset {
+  border: 3px solid var(--forest);
+  display: grid;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 16px;
+}
+
+legend {
+  background: var(--forest);
+  color: var(--lime);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+fieldset label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+fieldset input {
+  accent-color: var(--orange);
+  margin-right: 8px;
+  transform: scale(1.15);
+}
+
 .symptom-form button { margin-top: 20px; }
-.report { background: #eaf4cd; color: var(--forest); display: none; line-height: 1.5; margin-top: 18px; padding: 16px; }
-.report strong { display: block; margin-bottom: 5px; }
-@media (max-width: 760px) { .scan-layout { grid-template-columns: 1fr; } .camera-frame, .camera-frame video, .camera-frame canvas { min-height: 260px; } .back-link { font-size: 0; padding: 12px; } .back-link::before { content: '←'; font-size: 18px; } }
+
+.report {
+  background: var(--lime);
+  border: 3px solid var(--forest);
+  color: var(--forest);
+  display: none;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-top: 18px;
+  padding: 14px 16px;
+}
+
+.report strong { display: block; margin-bottom: 6px; text-transform: uppercase; }
+
+@media (min-width: 900px) {
+  .scan-hero h1 { font-size: 96px; }
+  .scan-layout { gap: 32px; grid-template-columns: 1.1fr .9fr; }
+  .camera-frame, .camera-frame video, .camera-frame canvas { min-height: 420px; }
+  .symptom-form h2 { font-size: 52px; }
+}
