@@ -1,5 +1,5 @@
 const cart = [];
-const cartCount = document.querySelector('.cart-count');
+const cartCount = document.querySelector('.cnt');
 const toast = document.querySelector('.toast');
 const contactNumber = '2348136446489';
 
@@ -9,7 +9,7 @@ function showToast(message) {
   window.setTimeout(() => { toast.style.display = 'none'; }, 2600);
 }
 
-document.querySelectorAll('.add-button').forEach((button) => {
+document.querySelectorAll('.ad').forEach((button) => {
   button.addEventListener('click', () => {
     cart.push(button.dataset.product);
     cartCount.textContent = cart.length;
@@ -17,7 +17,7 @@ document.querySelectorAll('.add-button').forEach((button) => {
   });
 });
 
-document.querySelector('.cart-button').addEventListener('click', () => {
+document.querySelector('.b').addEventListener('click', () => {
   if (!cart.length) return showToast('Your basket is empty.');
   const totals = { 'Golden Kitchen Oil': 1700, 'Family 5-Litre Bottle': 8500, 'Reseller 25-Litre Bottle': 50000 };
   const hasUnpricedItem = cart.some((product) => !totals[product]);
@@ -40,10 +40,10 @@ document.querySelector('.copy-button').addEventListener('click', async () => {
   showToast('Payment number copied.');
 });
 
-document.querySelector('.form').addEventListener('submit', (event) => {
+document.querySelector('.fm').addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const message = `Hello QUAD K, I want to join the business. Name: ${formData.get('name')}. Phone: ${formData.get('phone')}. Email: ${formData.get('email')}. Path: ${formData.get('path')}. Interest: ${formData.get('message')}`;
   window.open(`https://wa.me/${contactNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
-  document.querySelector('.form-message').style.display = 'block';
+  document.querySelector('.msg').style.display = 'block';
 });

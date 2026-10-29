@@ -21,6 +21,9 @@ There is no server-side code: the order and join forms just build a `wa.me`
 WhatsApp deep link, and the tree scanner keeps everything in the browser
 (`getUserMedia` + canvas). No credentials or environment variables are needed.
 
+`join-us.html` and `tree-scan.html` share the home page's header, footer and
+form language, so all three read as one site.
+
 ## Running it
 
 ```sh
@@ -46,25 +49,41 @@ no rebuild**. Only restart (`docker compose ... restart web`) after changing
 - The whole repo root is mounted at `/srv/site`, so new pages need no compose
   change. `.base44/site.conf` denies dotfiles so `/.git` and `/.base44` are not
   web-reachable.
-- `quad-k.css` `@import`s Google Fonts over the network, and `tree-scan.css`
-  references a Wikimedia image URL, so those two look better online.
+- **Fonts are system-only** (`Impact` → `Arial Black` → `Arial`). The design
+  deliberately ships no web-font `@import`, so nothing waits on Google Fonts.
+- **All imagery is hosted, not local.** There is no `img/` directory: pages load
+  photos from the Base44 media library on `media.base44.com` (palm-fruit hero,
+  one still life per product tier, broom). Do not reintroduce local
+  `c:\Users\...` paths — those never resolve over HTTP.
 
-## Known pre-existing content gaps (not setup problems)
+## Design system ("Market Stall")
 
-- **No images in the repo.** There is no `img/` directory, yet the pages request
-  `img/QKlogo.jpg` (favicon + Broom product) and `img/ai-palm-fruit.svg` (hero
-  background). Four product cards also point at local Windows paths like
-  `c:\Users\QUAD K\Pictures\less5%.jpg`, which can never resolve over HTTP. All
-  six product images currently render as empty placeholders.
-- **`join-us.html` is missing its opening markup.** The file starts at
-  `<div class="value-list">` with a stray `</section>`, so it has no `<header>`,
-  no `<main>` opening tag and no hero — the page renders with no navigation.
-  The closing tags at the bottom are intact.
+`quad-k.css` is the shared poster system used by all three pages: acid lime
+`#EAFB4B`, forest `#123524`, hot orange `#FF6B3D`, heavy grotesque type, 3-4px
+borders with hard offset shadows, rotated "ticket" cards, and a marquee band.
+
+- Base styles are written for the mobile width (764px) and a
+  `@media (min-width:900px)` block widens the stage and takes the shelf to 3-up.
+  Keep both branches in the same language when editing.
+- `quad-k.js` is coupled to the design class names on the home page: `.ad`
+  (add to basket), `.cnt` (counter), `.b` (basket button), `.copy-button`,
+  `.fm` (form) and `.msg` (form status). Renaming any of those in the HTML
+  silently breaks the cart and forms — update the script in the same change.
+- `.msg` is hidden by default (`.msg { display:none }`) and shown by JS after a
+  successful submit; `tree-scan.js` drives `#report` the same way.
 
 ## Verifying
 
 `curl -sS -o /dev/null -w "%{http_code} %{content_type}\n" http://localhost:3000/`
 should return `200 text/html; charset=utf-8`. Each page and asset should be 200
 with the matching content type, and `/join-us.html`, `/tree-scan.html` should
-both render. The cart button and "add to basket" toast on the home page work
-entirely client-side.
+both render.
+
+Interactive behaviour to exercise in the browser (all client-side, nothing
+persists):
+
+- Home: an add button (`.ad`) increments the basket counter and raises the
+  toast; the basket button opens a `wa.me` link.
+- Join us: submitting the form opens WhatsApp and reveals `.msg`.
+- Tree scanner: picking a "visible sign" and submitting renders `#report` with
+  the chosen location and signs. Camera capture needs a real camera permission.
