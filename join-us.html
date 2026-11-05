@@ -5,15 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The story of QUAD K and ways to grow with our palm oil business.">
   <title>Our story | Join QUAD K</title>
-  <link rel="icon" type="image/jpeg" href="img/QKlogo.jpg" sizes="256x256 128x128 32x32">
+  <link rel="icon" type="image/svg+xml" href="img/QKlogo.svg" sizes="any">
   <link rel="stylesheet" href="quad-k.css">
   <link rel="stylesheet" href="join-us.css">
 </head>
 <body>
-      <div class="value-list">
-        <article><span>01</span><h3>Respect the source</h3><p>Healthy trees and supported growers are the beginning of every good order.</p></article>
-        <article><span>02</span><h3>Make quality practical</h3><p>Fresh, carefully filtered palm oil should work for a family kitchen or a growing shelf.</p></article>
-        <article><span>03</span><h3>Grow together</h3><p>Farmers, resellers, distributors, and customers all have a place in the QUAD K story.</p></article>
+  <header class="site-header">
+    <a class="brand" href="index.html">QUAD K</a>
+    <nav aria-label="Main navigation"><a href="index.html#shop">Shop</a><a href="tree-scan.html">Tree scanner</a><a href="join-us.html">Join us</a></nav>
+    <a class="chat-button" href="https://wa.me/2348136446489?text=Hello%20QUAD%20K%2C%20I%20would%20like%20to%20talk%20about%20palm%20oil." target="_blank" rel="noopener">Talk to us</a>
+  </header>
+
+  <main id="top">
+    <section class="story-hero">
+      <div class="story-hero-copy"><p class="eyebrow">Our story</p><h1>Good oil starts with people who care for the grove.</h1><p>QUAD K is a Nigerian palm oil business built on healthy trees, careful pressing, and growers we work with directly.</p><a class="primary-button" href="#application">Join the business</a></div>
+      <figure class="story-image"><img src="img/palm-oil.svg" alt="Red palm oil packed by QUAD K"><figcaption>From our grove</figcaption></figure>
+    </section>
+
+    <section class="story-section values" aria-labelledby="values-title">
+      <div class="section-kicker"><span>01</span><p class="eyebrow">What we stand for</p></div>
+      <div class="story-copy">
+        <h2 id="values-title">Three things we do not rush.</h2>
+        <div class="value-list">
+          <article><span>01</span><h3>Respect the source</h3><p>Healthy trees and supported growers are the beginning of every good order.</p></article>
+          <article><span>02</span><h3>Make quality practical</h3><p>Fresh, carefully filtered palm oil should work for a family kitchen or a growing shelf.</p></article>
+          <article><span>03</span><h3>Grow together</h3><p>Farmers, resellers, distributors, and customers all have a place in the QUAD K story.</p></article>
+        </div>
       </div>
     </section>
 
@@ -36,7 +53,7 @@
     </section>
   </main>
 
-  <footer><strong>QUAD K</strong><div class="payment-note">A Nigerian palm oil business, grown with care. <a href="QUAD K.HTML">Shop the grove</a>.</div></footer>
+  <footer><strong>QUAD K</strong><div class="payment-note">A Nigerian palm oil business, grown with care. <a href="index.html">Shop the grove</a>.</div></footer>
   <script>
     document.querySelector('#join-form').addEventListener('submit', (event) => {
       event.preventDefault();

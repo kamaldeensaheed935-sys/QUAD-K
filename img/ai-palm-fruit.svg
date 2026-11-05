@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Palm fruit cluster with fronds">
+  <rect width="1200" height="700" fill="#14361f"/>
+  <g stroke="#1d5533" stroke-width="16" stroke-linecap="round" fill="none" opacity=".85">
+    <path d="M120 700C220 470 320 330 470 240"/>
+    <path d="M250 700C330 480 430 330 600 250"/>
+    <path d="M420 700C470 500 560 350 720 280"/>
+  </g>
+  <g fill="#2c7a45" opacity=".9">
+    <path d="M470 240c70-70 170-96 250-70-70 40-150 70-250 70z"/>
+    <path d="M470 240c-40-90-20-190 40-250 20 90 10 180-40 250z"/>
+    <path d="M470 240c-90-30-160-100-180-190 80 40 140 110 180 190z"/>
+    <path d="M600 250c80-50 180-50 250 0-80 30-170 30-250 0z"/>
+    <path d="M720 280c70-60 170-80 250-50-70 40-160 60-250 50z"/>
+  </g>
+  <g fill="#b65332">
+    <circle cx="500" cy="330" r="26"/>
+    <circle cx="548" cy="306" r="24"/>
+    <circle cx="574" cy="356" r="27"/>
+    <circle cx="512" cy="386" r="25"/>
+    <circle cx="562" cy="406" r="23"/>
+    <circle cx="470" cy="352" r="22"/>
+  </g>
+  <g fill="#d5eb65" opacity=".5">
+    <circle cx="500" cy="330" r="7"/>
+    <circle cx="574" cy="356" r="7"/>
+    <circle cx="512" cy="386" r="7"/>
+  </g>
+</svg>
